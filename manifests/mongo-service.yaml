@@ -10,6 +10,6 @@ spec:
   ports:
     - port: 27017
       targetPort: 27017
-  clusterIP: None  # This creates a headless service
+  clusterIP: None  # for stateful set headless service
   selector:
     role: db
