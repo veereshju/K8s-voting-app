@@ -10,4 +10,5 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: gp2
   hostPath:
-    path: /mnt/data/mongo
+    path: /mnt/data/mongo  # Ensure this directory exists on your node
+
