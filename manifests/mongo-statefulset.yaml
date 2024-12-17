@@ -45,17 +45,12 @@ spec:
           ports:
             - containerPort: 27017
           volumeMounts:
-            - name: mongodb-persistent-storage-claim
+            - name: mongodb-empty-storage
               mountPath: /data/db
-  volumeClaimTemplates:
-    - metadata:
-        name: mongodb-persistent-storage-claim
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 0.5Gi
-        volumeMode: Filesystem
+  volumeClaimTemplates: []  # Remove PVC and use emptyDir
+  volumes:
+    - name: mongodb-empty-storage
+      emptyDir: {}  # Temporary storage from node
+
 
 
